@@ -1,2 +1,2 @@
-# HRMS-Human-Resource-Managements-System
+# HRMS-Human-Resource-Management-System
 ### This is a HRMS project
