@@ -4,16 +4,11 @@ import java.util.List;
 
 import com.muratkistan.hrms_service.core.utilities.result.DataResult;
 import com.muratkistan.hrms_service.core.utilities.result.Result;
-import com.muratkistan.hrms_service.entities.concretes.JobPosition;
+import com.muratkistan.hrms_service.entities.concretes.JobSeeker;
 
-public interface JobPositionsService {
+public interface JobSeekerService {
 	
-
-	
-	Result addPosition(JobPosition jobPosition);
-	
-	DataResult<List<JobPosition>> getAll();
-	
-	
+	public DataResult<List<JobSeeker>> getAll();
+	public Result addJobSeeker(JobSeeker jobSeeker);
 
 }

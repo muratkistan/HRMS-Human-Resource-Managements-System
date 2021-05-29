@@ -4,54 +4,40 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.muratkistan.hrms_service.business.abstracts.JobPositionsService;
+import com.muratkistan.hrms_service.core.utilities.result.DataResult;
+import com.muratkistan.hrms_service.core.utilities.result.Result;
 import com.muratkistan.hrms_service.entities.concretes.JobPosition;
 
 @RestController
 @RequestMapping("/api/1.0/position")
 public class JobPositionsController {
-	@Autowired
+
 	private JobPositionsService jobPositionsService;
 	
 	
-	@GetMapping("/add")
-	@ResponseBody
-	public String addPosition() {
-		
-		JobPosition position1 = new JobPosition("Software Developer",10);
-		JobPosition position2 = new JobPosition("Frontend Developer",5);
-		JobPosition position3 = new JobPosition("Java Developer",7);
-		
-		jobPositionsService.addPosition(position1);
-		jobPositionsService.addPosition(position2);
-		jobPositionsService.addPosition(position3);
-		
-		
-		
-		return "Pozisyonlar  Eklendi";
-		
+	
+	@Autowired
+	public JobPositionsController(JobPositionsService jobPositionsService) {
+		super();
+		this.jobPositionsService = jobPositionsService;
 	}
-	
-	
-	@GetMapping("/delete/{id}")	//PathVariable ile buraya silinecek pozisyonun idsini giriyoruz
-	@ResponseBody
-	public String deletePosition(@PathVariable int  id) {
-		
-		jobPositionsService.deletePositionById(id);		
-		return  "Silinen pozisyon id : "+ id;
+
+
+	@PostMapping("/add")
+	public Result addPosition(@RequestBody JobPosition jobPosition) {
+		return jobPositionsService.addPosition(jobPosition);
 		
 	}
 	
 	@GetMapping("/getall")
-	@ResponseBody
-	public List<JobPosition> getAllPosition() {
-		
-		return jobPositionsService.getAllPosition();
+	public DataResult<List<JobPosition>> getAll() {
+		return jobPositionsService.getAll();	
 		
 	}
 
