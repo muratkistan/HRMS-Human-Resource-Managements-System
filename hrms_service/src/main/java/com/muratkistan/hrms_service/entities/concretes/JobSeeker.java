@@ -1,5 +1,7 @@
 package com.muratkistan.hrms_service.entities.concretes;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -20,10 +22,15 @@ import lombok.NoArgsConstructor;
 @PrimaryKeyJoinColumn(name="user_id", referencedColumnName = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobSeeker extends User {
+public class JobSeeker extends User implements Serializable{
 	
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name="first_name")
 	private String firstName;
 	

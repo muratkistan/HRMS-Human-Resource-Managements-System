@@ -1,11 +1,11 @@
 package com.muratkistan.hrms_service.entities.concretes;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,9 +19,14 @@ import lombok.NoArgsConstructor;
 @PrimaryKeyJoinColumn(name="user_id", referencedColumnName = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee extends User{
+public class Employee extends User implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name="first_name")
 	private String firstName;
 	

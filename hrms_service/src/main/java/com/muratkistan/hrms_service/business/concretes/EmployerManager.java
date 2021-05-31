@@ -68,6 +68,11 @@ public class EmployerManager implements EmployerService {
 			employerDao.save(employer);
 			return new SuccessResult("Kayit Basarili bir sekilde olusturuldu");
 		}
+		
+	
+	
+		
+		
 	}
 
 }
