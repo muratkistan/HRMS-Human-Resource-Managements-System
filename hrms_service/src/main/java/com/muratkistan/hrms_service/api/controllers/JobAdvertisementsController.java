@@ -18,12 +18,12 @@ import com.muratkistan.hrms_service.entities.concretes.JobAdvertisement;
 
 @RestController
 @RequestMapping("/api/1.0/jobadvertisement")
-public class JobAdvertisementController {
+public class JobAdvertisementsController {
 	
 	private JobAdvertisementService jobAdvertisementService;
 
 	@Autowired
-	public JobAdvertisementController(JobAdvertisementService jobAdvertisementService) {
+	public JobAdvertisementsController(JobAdvertisementService jobAdvertisementService) {
 		super();
 		this.jobAdvertisementService = jobAdvertisementService;
 	}

@@ -12,5 +12,8 @@ public interface JobSeekerDao  extends JpaRepository<JobSeeker, Integer> {
 	
 	
 	
+	
+	
+	
 
 }
