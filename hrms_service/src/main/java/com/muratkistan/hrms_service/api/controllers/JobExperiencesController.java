@@ -51,8 +51,8 @@ public class JobExperiencesController {
     }
     
     @GetMapping("/findAllByJobSeekerId/{jobSeekerId}")
-    public ResponseEntity<DataResult<List<JobExperience>>> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
-    	return jobExperienceService.findAllByJobSeekerId(jobSeekerId);
+    public ResponseEntity<?> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
+    	return ResponseEntity.ok(jobExperienceService.findAllByJobSeekerId(jobSeekerId));
     }
 		
     	

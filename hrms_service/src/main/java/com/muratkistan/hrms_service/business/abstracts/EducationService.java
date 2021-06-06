@@ -13,6 +13,6 @@ public interface EducationService {
 
 	ResponseEntity<DataResult<List<Education>>> getAll();
 	
-	ResponseEntity<DataResult<List<Education>>> findAllByJobSeekerId(int jobSeekerId);
+	DataResult<List<Education>> findAllByJobSeekerId(int jobSeekerId);
 
 }

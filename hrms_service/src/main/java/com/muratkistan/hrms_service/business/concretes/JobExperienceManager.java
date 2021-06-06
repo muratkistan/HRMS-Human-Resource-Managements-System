@@ -48,9 +48,9 @@ public class JobExperienceManager implements JobExperienceService {
 	}
 
 	@Override
-	public ResponseEntity<DataResult<List<JobExperience>>> findAllByJobSeekerId(int jobSeekerId) {
+	public DataResult<List<JobExperience>> findAllByJobSeekerId(int jobSeekerId) {
 
-		return ResponseEntity.ok(new SuccessDataResult<>(jobExperienceDao.findAllByJobSeekerId(jobSeekerId)));
+		return new SuccessDataResult<List<JobExperience>>(jobExperienceDao.findAllByJobSeekerId(jobSeekerId));
 	}
 
 }

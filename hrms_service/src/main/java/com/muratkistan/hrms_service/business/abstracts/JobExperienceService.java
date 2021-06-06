@@ -13,7 +13,7 @@ public interface JobExperienceService {
 
 	ResponseEntity<DataResult<List<JobExperience>>> getAll();
 	
-	ResponseEntity<DataResult<List<JobExperience>>> findAllByJobSeekerId(int jobSeekerId);
+	DataResult<List<JobExperience>> findAllByJobSeekerId(int jobSeekerId);
 	
 	ResponseEntity<DataResult<List<JobExperience>>> findAllByOrderByLeavingDateAsc();
 	

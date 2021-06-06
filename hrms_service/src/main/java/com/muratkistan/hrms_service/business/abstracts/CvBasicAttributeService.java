@@ -13,5 +13,5 @@ public interface CvBasicAttributeService {
 	ResponseEntity<DataResult<CvBasicAttribute>> add(CvBasicAttribute cvBasicAttribute);
     ResponseEntity<DataResult<List<CvBasicAttribute>>> getAll();
     
-    ResponseEntity<DataResult<List<CvBasicAttribute>>> findAllByJobSeekerId(int jobSeekerId);
+    DataResult<List<CvBasicAttribute>> findAllByJobSeekerId(int jobSeekerId);
 }

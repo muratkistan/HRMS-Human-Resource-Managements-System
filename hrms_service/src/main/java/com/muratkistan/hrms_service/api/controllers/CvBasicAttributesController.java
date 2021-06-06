@@ -36,8 +36,8 @@ public class CvBasicAttributesController {
 	    }
 	    
 	    @GetMapping( "/findAllByJobSeekerId/{jobSeekerId}")
-	    public ResponseEntity<DataResult<List<CvBasicAttribute>>> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
-	    	return cvBasicAttributeService.findAllByJobSeekerId(jobSeekerId);
+	    public ResponseEntity<?> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
+	    	return ResponseEntity.ok(cvBasicAttributeService.findAllByJobSeekerId(jobSeekerId));
 	    }
 	
 

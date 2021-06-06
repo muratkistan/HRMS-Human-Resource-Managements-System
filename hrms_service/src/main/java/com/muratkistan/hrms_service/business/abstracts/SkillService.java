@@ -14,7 +14,7 @@ public interface SkillService {
 
 	ResponseEntity<DataResult<List<Skill>>> getAll();
 	
-	ResponseEntity<DataResult<List<Skill>>> findAllByJobSeekerId(int jobSeekerId);
+	DataResult<List<Skill>> findAllByJobSeekerId(int jobSeekerId);
 	
 
 }

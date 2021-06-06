@@ -39,8 +39,8 @@ public class ForeignLanguagesController {
     }
     
     @GetMapping("/findAllByJobSeekerId")
-    public List<ForeignLanguage> findAllByJobSeekerId(int jobSeekerId){
-    	return foreignLanguageService.findAllByJobSeekerId(jobSeekerId);
+    public ResponseEntity<?> findAllByJobSeekerId(int jobSeekerId){
+    	return ResponseEntity.ok(foreignLanguageService.findAllByJobSeekerId(jobSeekerId));
     }
 
 }

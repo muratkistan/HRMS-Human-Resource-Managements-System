@@ -35,9 +35,9 @@ public class CvBasicAttributeManager implements CvBasicAttributeService {
 	}
 
 	@Override
-	public ResponseEntity<DataResult<List<CvBasicAttribute>>> findAllByJobSeekerId(int jobSeekerId) {
+	public DataResult<List<CvBasicAttribute>> findAllByJobSeekerId(int jobSeekerId) {
 
-		return ResponseEntity.ok(new SuccessDataResult<>(cvBasicAttributeDao.findAllByJobSeekerId(jobSeekerId)));
+		return new SuccessDataResult<List<CvBasicAttribute>>(cvBasicAttributeDao.findAllByJobSeekerId(jobSeekerId));
 	}
 
 }

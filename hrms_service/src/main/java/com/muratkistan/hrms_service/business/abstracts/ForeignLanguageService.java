@@ -14,7 +14,7 @@ public interface ForeignLanguageService {
 
 	ResponseEntity<DataResult<List<ForeignLanguage>>> getAll();
 	
-	List<ForeignLanguage> findAllByJobSeekerId(int jobSeekerId);
+	DataResult<List<ForeignLanguage>> findAllByJobSeekerId(int jobSeekerId);
 	
 	
 

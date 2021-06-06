@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -35,8 +36,9 @@ public class ForeignLanguage {
 	@Column(name = "language_level")
 	private int languageLevel;
 	
-	//isaretledim
+	
 	@ManyToOne
+//	@JsonIgnore
 	@JoinColumn(name = "jobSeeker_id")
 	private JobSeeker jobSeeker;
 	

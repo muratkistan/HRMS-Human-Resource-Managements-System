@@ -36,8 +36,8 @@ public class EducationsController {
     }
     
     @GetMapping("/findAllByJobSeekerId/{jobSeekerId}")
-    public ResponseEntity<DataResult<List<Education>>> findAllByJobSeekerId(@PathVariable int jobSeekerId){
-    	return educationService.findAllByJobSeekerId(jobSeekerId);
+    public ResponseEntity<?> findAllByJobSeekerId(@PathVariable int jobSeekerId){
+    	return ResponseEntity.ok(educationService.findAllByJobSeekerId(jobSeekerId));
     }
 	
 

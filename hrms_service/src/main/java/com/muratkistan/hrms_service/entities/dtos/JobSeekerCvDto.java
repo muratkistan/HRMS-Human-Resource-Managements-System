@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvAllPartDto {
+public class JobSeekerCvDto {
 	
-	@JsonIgnore
+//degisti jsonignore
 	private JobSeeker jobSeeker;
 	
 	private List<JobExperience> jobExperiences;

@@ -40,9 +40,9 @@ public class SkillManager  implements SkillService{
 	}
 
 	@Override
-	public ResponseEntity<DataResult<List<Skill>>> findAllByJobSeekerId(int jobSeekerId) {
+	public DataResult<List<Skill>> findAllByJobSeekerId(int jobSeekerId) {
 		
-		return ResponseEntity.ok(new SuccessDataResult<>(skillDao.findAllByJobSeekerId(jobSeekerId)));
+		return new SuccessDataResult<List<Skill>>(skillDao.findAllByJobSeekerId(jobSeekerId));
 	}
 
 	

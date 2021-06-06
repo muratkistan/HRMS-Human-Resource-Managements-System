@@ -38,8 +38,8 @@ public class SkillsController {
     }
     
     @GetMapping("/findAllByJobSeekerId/{jobSeekerId}")
-    public ResponseEntity<DataResult<List<Skill>>> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
-    	return skillService.findAllByJobSeekerId(jobSeekerId);
+    public ResponseEntity<?> findAllByJobSeekerId(@PathVariable int jobSeekerId) {
+    	return ResponseEntity.ok(skillService.findAllByJobSeekerId(jobSeekerId));
     }
 	
 

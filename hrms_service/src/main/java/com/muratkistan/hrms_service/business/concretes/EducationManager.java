@@ -35,9 +35,9 @@ public class EducationManager implements EducationService {
 	}
 
 	@Override
-	public ResponseEntity<DataResult<List<Education>>> findAllByJobSeekerId(int jobSeekerId) {
+	public DataResult<List<Education>> findAllByJobSeekerId(int jobSeekerId) {
 		
-		return ResponseEntity.ok(new SuccessDataResult<>(educationDao.findAllByJobSeekerId(jobSeekerId)));
+		return new SuccessDataResult<List<Education>>(educationDao.findAllByJobSeekerId(jobSeekerId));
 
 	}
 

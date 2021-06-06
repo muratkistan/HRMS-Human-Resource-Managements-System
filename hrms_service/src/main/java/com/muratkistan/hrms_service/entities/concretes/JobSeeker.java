@@ -49,7 +49,7 @@ public class JobSeeker extends User implements Serializable {
 	
 	//Isaretledim
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobSeeker")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "jobSeeker")
 	private List<CvBasicAttribute> cvBasicAttribute;
 	
 	@JsonIgnore

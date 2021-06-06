@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,6 +35,7 @@ public class Skill {
 	private String technologyName;
 	
 	@ManyToOne
+//	@JsonIgnore
     @JoinColumn(name = "jobseeker_id")
     private JobSeeker jobSeeker;
 
